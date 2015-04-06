@@ -1,0 +1,53 @@
+﻿<Window x:Class="dr2_PZW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:dr2_PZW.Controls"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+            <Button x:Name="LeftButton" Padding="10" Margin="5" Width="70">Left</Button>
+            <Button x:Name="RightButton" Padding="10" Margin="5" Width="70">Right</Button>
+        </StackPanel>
+        
+        <Rectangle Grid.Row="1" Grid.Column="0" Width="110" Height="110" Margin="10 0 10 0" Fill="LightSalmon"></Rectangle>
+        <controls:User x:Name="OnlineUser" Grid.Column="0" Grid.Row="1" UserName="Josipa" UserPath="/Resources/Images/user1.png" Width="80" Height="80" Margin="0 5"></controls:User>
+
+
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="1"  Width="Auto" Height="40" Margin="15 5">
+            <TextBox TextAlignment="Left" Padding="10">Search</TextBox>
+        </Border>
+
+        <ScrollViewer Grid.Row="2" Grid.Column="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="UserContainer" Orientation="Vertical">
+                <controls:User UserName="Mirko" UserPath="/Resources/Images/user2.png" Width="80" Height="80" Margin="0 5"></controls:User>
+                <controls:User UserName="Petra" UserPath="/Resources/Images/user3.png" Width="80" Height="80" Margin="0 5"></controls:User>
+                <controls:User UserName="Ivan" UserPath="/Resources/Images/user4.png" Width="80" Height="80" Margin="0 5"></controls:User>
+                <controls:User UserName="Igor" UserPath="/Resources/Images/user5.png" Width="80" Height="80" Margin="0 5"></controls:User>
+                
+            </StackPanel>
+        </ScrollViewer>
+
+        <ScrollViewer Grid.Row="2" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="PostsContainer" Orientation="Vertical">
+                <controls:Post UserName_post="Josipa" UserPath_post="/Resources/Images/user1.png" Comment="U Splitu je lijep i sunčan dan!" Margin="15 5" Width="Auto" Height="70"></controls:Post>
+                <controls:Post UserName_post="Mirko" UserPath_post="/Resources/Images/user2.png" Comment="Blago ti se, u Zadru pada kiša." Margin="15 5" Width="Auto" Height="70"></controls:Post>
+                <controls:Post UserName_post="Petra" UserPath_post="/Resources/Images/user3.png" Comment="Položila sam vozački." Margin="15 5" Width="Auto" Height="70"></controls:Post>
+                <controls:Post UserName_post="Mirko" UserPath_post="/Resources/Images/user2.png" Comment="Kad ćemo se prozovat?" Margin="15 5" Width="Auto" Height="70"></controls:Post>
+                <controls:Post UserName_post="Igor" UserPath_post="/Resources/Images/user4.png" Comment="Napravio sam svoj novi blog! :)" Margin="15 5" Width="Auto" Height="70"></controls:Post>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Window>
